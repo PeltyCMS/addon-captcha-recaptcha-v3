@@ -1,31 +1,41 @@
 # Google reCAPTCHA v3
 
-Official **PeltyCMS** `captcha` WASM addon (`captcha-recaptcha-v3`).
+Stop bots on PeltyCMS forms with Google reCAPTCHA v3
 
-## Install
+Official **captcha / bot protection** for [PeltyCMS](https://github.com/MythicalLTD/PeltyCMS) — identifier `captcha-recaptcha-v3`.
 
-1. Open Pelty Admin → Addons → Marketplace
-2. Set registry URL to `https://market.mythicalsystems.org/api/pelty/addons/registry.json`
-3. Download **Google reCAPTCHA v3**
+## Why this addon
 
-Marketplace: https://market.mythicalsystems.org/marketplace/product/captcha-recaptcha-v3  
-Product ID (CI): `45`
+Anyone tired of spam accounts and bot ticket floods.
 
-## Develop
+## Features
 
-This repository is a git submodule of [MythicalLTD/PeltyCMS](https://github.com/MythicalLTD/PeltyCMS) at `extensions/addons/captcha-recaptcha-v3`.
+- Protect login, register, tickets and checkout with **Google reCAPTCHA v3**
+- Server-side verification inside the WASM captcha addon
+- Site keys configured once in Pelty settings
+- No theme PHP hacks
 
-```bash
-# from the PeltyCMS monorepo
-cargo xtask addons captcha-recaptcha-v3
-```
+## How it works
 
-## Release (Mythic Marketplace)
+1. Install **Google reCAPTCHA v3** from the [Mythical marketplace](https://market.mythicalsystems.org/marketplace/product/captcha-recaptcha-v3) (or Pelty Admin → Addons → Marketplace).
+2. Open Pelty Admin and enter your Google reCAPTCHA v3 credentials in the addon settings.
+3. Attach it to the products / forms / login flows you care about.
+4. New orders and sign-ins use Google reCAPTCHA v3 automatically.
 
-Same flow as [featherpanel-com/PterodactylPanelApi](https://github.com/featherpanel-com/PterodactylPanelApi):
+## Requirements
 
-1. Repo secrets: `MYTHIC_PRODUCT_ID`, `MYTHIC_RELEASE_TOKEN`
-2. Repo variable: `ADDON_DIR=captcha-recaptcha-v3`
-3. Actions → **Release Addon** → Run workflow
+- A running PeltyCMS panel with WASM addons enabled
+- Valid Google reCAPTCHA v3 API / OAuth / panel credentials (depending on the integration)
+- Outbound HTTPS from the panel to Google reCAPTCHA v3
 
-Publishes the packed `captcha-recaptcha-v3.zip` via `MythicalLTD/.github/actions/publish-release@v1` and creates a GitHub Release.
+## Get it
+
+[Google reCAPTCHA v3 on Mythical Marketplace](https://market.mythicalsystems.org/marketplace/product/captcha-recaptcha-v3)
+
+Free official build. Source for this package lives in this repository.
+
+## Support
+
+- Marketplace product page: https://market.mythicalsystems.org/marketplace/product/captcha-recaptcha-v3
+- PeltyCMS core: https://github.com/MythicalLTD/PeltyCMS
+- Issues for this addon: use this repo’s Issues tab
